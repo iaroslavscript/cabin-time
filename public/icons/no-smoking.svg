@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="25 88 990 300" width="990" height="300">
+  <title>No smoking</title>
+  <g fill="#ffb21e">
+    <path d="M40 182h24v116H40zm34 0h24v116H74zm34 0h24v116h-24zm34 0h852a6 6 0 0 1 6 6v104a6 6 0 0 1-6 6H142z" />
+    <path d="M78 166 106 104h22l-28 62zm34 0 28-62h22l-28 62zm34 0 28-62h22l-28 62z" stroke="#ffb21e" stroke-width="4" stroke-linejoin="round" />
+  </g>
+  <path d="m402 122 236 236m0-236L402 358" stroke="#141210" stroke-width="94" />
+  <path d="m410 130 220 220m0-220L410 350" stroke="#ff5a1a" stroke-width="80" />
+</svg>
