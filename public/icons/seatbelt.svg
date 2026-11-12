@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="130 94 1090 274" width="1090" height="274">
+  <title>Fasten seat belt</title>
+  <defs>
+    <g id="hand" fill="#ffb21e" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M188 120c40-6 80-9 116-8 46 2 88 16 118 38l12 84 30 26-130 40c-6 0-10-3-13-8z" stroke="#141210" stroke-width="12" />
+      <path d="M452 232L510 304" stroke="#141210" stroke-width="40" />
+      <path d="M452 232L510 304" stroke="#ffb21e" stroke-width="30" />
+      <path d="M424 246L474 322" stroke="#141210" stroke-width="40" />
+      <path d="M424 246L474 322" stroke="#ffb21e" stroke-width="30" />
+      <path d="M394 256L438 332" stroke="#141210" stroke-width="40" />
+      <path d="M394 256L438 332" stroke="#ffb21e" stroke-width="30" />
+      <path d="M364 262L398 328" stroke="#141210" stroke-width="40" />
+      <path d="M364 262L398 328" stroke="#ffb21e" stroke-width="30" />
+      <path d="M188 120c40-6 80-9 116-8 46 2 88 16 118 38l12 84 30 26-130 40c-6 0-10-3-13-8z" />
+      <path d="M412 150c30-4 64-6 92-4 10 2 12 14 2 18l-62 22-28 6z" stroke="#141210" stroke-width="8" paint-order="stroke" />
+    </g>
+  </defs>
+  <g fill="#ffb21e">
+    <path d="M140 195h260v7.6h-260z M140 205h260v7.6h-260z M140 215h260v7.6h-260z M140 225h260v7.6h-260z M140 235h260v7.6h-260z M140 245h260v7.6h-260z M140 255h260v7.6h-260z M140 265h260v7.6h-260z M140 275h260v7.6h-260z M140 285h260v7.6h-260z" />
+    <rect x="395" y="165" width="183" height="157" rx="10" />
+    <g transform="translate(-80 0)">
+      <path d="M960 195h340v7.6h-340z M960 205h340v7.6h-340z M960 215h340v7.6h-340z M960 225h340v7.6h-340z M960 235h340v7.6h-340z M960 245h340v7.6h-340z M960 255h340v7.6h-340z M960 265h340v7.6h-340z M960 275h340v7.6h-340z M960 285h340v7.6h-340z" />
+      <path fill-rule="evenodd" d="M856 175h104a6 6 0 0 1 6 6v115a6 6 0 0 1-6 6H856a6 6 0 0 1-6-6V181a6 6 0 0 1 6-6zm16 26v78h28v-78z" />
+      <use href="#hand" transform="matrix(-1 0 0 1 1435 -8)" />
+    </g>
+  </g>
+  <path d="M675 242c0-6 60-60 66-60 4 0 7 3 7 8v104c0 5-3 8-7 8-6 0-66-54-66-60z" fill="#38d65a" />
+  <use href="#hand" />
+</svg>
