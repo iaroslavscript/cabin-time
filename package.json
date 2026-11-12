@@ -1,0 +1,51 @@
+{
+  "name": "github-cabin-time",
+  "version": "0.6.1",
+  "private": true,
+  "type": "module",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^12.10.0",
+      "onFail": "download"
+    }
+  },
+  "description": "Cabin Time — A little trip back to the cabin",
+  "license": "MIT",
+  "author": "Iaroslav Akimov (https://github.com/pp903)",
+  "workspaces": [],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "oxlint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "update:flights": "node scripts/update-flights.ts",
+    "clean": "rm -rf tmp .cpuprofile dist test-results playwright-report blob-report .playwright"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5",
+    "@types/topojson-client": "^3.1.5",
+    "@types/topojson-specification": "^1.0.5",
+    "@vite-pwa/assets-generator": "^2.0.0",
+    "@vitest/coverage-v8": "^5.0.5",
+    "oxlint": "^1.89.0",
+    "oxlint-tsgolint": "^7.0.2005",
+    "prettier": "^3.9.10",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vite-plugin-pwa": "^2.0.0",
+    "vitest": "^5.0.5",
+    "workbox-window": "^7.4.1"
+  },
+  "engines": {
+    "node": ">=26.0.0"
+  },
+  "dependencies": {
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
+  }
+}

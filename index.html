@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+    <meta name="description" content="Airplane overhead passenger service unit: reading lights, air vents and the cabin crew call button." />
+    <meta name="color-scheme" content="dark" />
+    <title>Cabin Crew Call</title>
+  </head>
+  <body>
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-bulb" viewBox="0 0 24 24">
+        <path d="M12 7.2a4.6 4.6 0 0 0-2.7 8.3c.5.4.8.9.8 1.5v.6h3.8V17c0-.6.3-1.1.8-1.5A4.6 4.6 0 0 0 12 7.2Z" fill="currentColor" />
+        <rect x="10.1" y="18.7" width="3.8" height="1.2" rx=".5" fill="currentColor" />
+        <rect x="10.5" y="20.4" width="3" height="1.1" rx=".5" fill="currentColor" />
+        <g stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+          <path d="M12 2.2v2.3M5.6 4.8l1.5 1.6M18.4 4.8l-1.5 1.6M3 11h2.1M18.9 11H21" />
+        </g>
+      </symbol>
+      <symbol id="i-person" viewBox="0 0 24 24">
+        <circle cx="12" cy="5.2" r="2.9" fill="currentColor" />
+        <path d="M8.6 9.4h6.8c1 0 1.8.8 1.8 1.8v5.2c0 .6-.5 1-1 1h-.9V21c0 .6-.4 1-1 1h-4.6c-.6 0-1-.4-1-1v-3.6h-.9c-.5 0-1-.4-1-1v-5.2c0-1 .8-1.8 1.8-1.8Z" fill="currentColor" />
+      </symbol>
+      <symbol id="i-plane" viewBox="-12 -12 24 24">
+        <path d="M0-12c1.3 1 1.4 3 1.4 5v4.8L11 3.2V5L1.4 2.2 1.2 8l3.2 2.6V12L0 10.8-4.4 12v-1.4L-1.2 8-1.4 2.2-11 5V3.2l9.6-5.4V-7c0-2 .1-4 1.4-5Z" />
+      </symbol>
+      <symbol id="i-gear" viewBox="0 0 24 24">
+        <path fill="currentColor" fill-rule="evenodd" d="M10.3 2h3.4l.5 2.6c.6.2 1.2.5 1.7.9l2.5-.9 1.7 2.9-2 1.7a7 7 0 0 1 0 2l2 1.7-1.7 2.9-2.5-.9c-.5.4-1.1.7-1.7.9l-.5 2.6h-3.4l-.5-2.6c-.6-.2-1.2-.5-1.7-.9l-2.5.9-1.7-2.9 2-1.7a7 7 0 0 1 0-2l-2-1.7 1.7-2.9 2.5.9c.5-.4 1.1-.7 1.7-.9ZM12 8.6a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8Z" transform="translate(0 1.5)" />
+      </symbol>
+    </svg>
+
+    <main class="psu" aria-label="Passenger service unit, row 17">
+      <div class="mood" aria-hidden="true"></div>
+
+      <header class="placard" aria-hidden="true">
+        <span class="row-no">17</span>
+        <span class="seat-letters"><span>A</span><span>B</span><span>C</span></span>
+      </header>
+
+      <section class="overhead" aria-label="Moving map and cabin signs">
+        <div class="ife-bezel">
+          <button class="ife" type="button" aria-expanded="false" aria-label="Moving map display, tap to enlarge">
+            <canvas class="ife-canvas" aria-hidden="true"></canvas>
+            <span class="ife-hud" aria-hidden="true"></span>
+            <span class="ife-glare" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="signs">
+          <div class="sign" role="img" aria-label="Fasten seat belt">
+            <img src="/icons/seatbelt.svg" alt="" />
+          </div>
+          <div class="sign" role="img" aria-label="No smoking">
+            <img src="/icons/no-smoking.svg" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="lights" aria-label="Reading lights">
+        <div class="light-cell" data-seat="A">
+          <div class="pocket">
+            <div class="lamp" aria-hidden="true"><span class="barrel"></span><span class="head"><span class="lens"></span></span></div>
+          </div>
+          <button class="light-btn" type="button" aria-pressed="false" aria-label="Reading light A">
+            <svg aria-hidden="true"><use href="#i-bulb" /></svg>
+          </button>
+        </div>
+        <div class="light-cell" data-seat="B">
+          <div class="pocket">
+            <div class="lamp" aria-hidden="true"><span class="barrel"></span><span class="head"><span class="lens"></span></span></div>
+          </div>
+          <button class="light-btn" type="button" aria-pressed="false" aria-label="Reading light B">
+            <svg aria-hidden="true"><use href="#i-bulb" /></svg>
+          </button>
+        </div>
+        <div class="light-cell" data-seat="C">
+          <div class="pocket">
+            <div class="lamp" aria-hidden="true"><span class="barrel"></span><span class="head"><span class="lens"></span></span></div>
+          </div>
+          <button class="light-btn" type="button" aria-pressed="false" aria-label="Reading light C">
+            <svg aria-hidden="true"><use href="#i-bulb" /></svg>
+          </button>
+        </div>
+      </section>
+
+      <section class="fans" aria-label="Air vents">
+        <div class="pocket" data-seat="A">
+          <button class="gasper" type="button" data-level="0" aria-label="Air vent A: off">
+            <span class="airflow" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="barrel" aria-hidden="true"></span>
+            <span class="head" aria-hidden="true"><span class="nozzle"><span class="vanes"></span></span></span>
+          </button>
+        </div>
+        <div class="pocket" data-seat="B">
+          <button class="gasper" type="button" data-level="0" aria-label="Air vent B: off">
+            <span class="airflow" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="barrel" aria-hidden="true"></span>
+            <span class="head" aria-hidden="true"><span class="nozzle"><span class="vanes"></span></span></span>
+          </button>
+        </div>
+        <div class="pocket" data-seat="C">
+          <button class="gasper" type="button" data-level="0" aria-label="Air vent C: off">
+            <span class="airflow" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="barrel" aria-hidden="true"></span>
+            <span class="head" aria-hidden="true"><span class="nozzle"><span class="vanes"></span></span></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="service" aria-label="Cabin crew call">
+        <div class="call-well">
+          <button id="call" class="call-btn" type="button" aria-pressed="false" aria-label="Call cabin crew">
+            <svg aria-hidden="true"><use href="#i-person" /></svg>
+          </button>
+        </div>
+        <svg class="speaker" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="48" class="speaker-rim" />
+          <g class="speaker-slots" fill="none" stroke-linecap="round">
+            <circle cx="50" cy="50" r="41" stroke-dasharray="22 4" />
+            <circle cx="50" cy="50" r="33" stroke-dasharray="18 4" />
+            <circle cx="50" cy="50" r="25" stroke-dasharray="14 4" />
+            <circle cx="50" cy="50" r="17" stroke-dasharray="10 4" />
+          </g>
+          <circle cx="50" cy="50" r="8" class="speaker-hub" />
+        </svg>
+      </section>
+
+      <div class="oxygen" aria-hidden="true"><span class="oxygen-latch"></span></div>
+
+      <div class="corner-btns">
+        <button id="settings" class="info-btn" type="button" aria-label="Preferences">
+          <svg aria-hidden="true"><use href="#i-gear" /></svg>
+        </button>
+        <button id="info" class="info-btn" type="button" aria-label="About">i</button>
+      </div>
+      <div class="ife-scrim" aria-hidden="true"></div>
+      <div class="call-glow" aria-hidden="true"></div>
+    </main>
+
+    <dialog id="about" aria-labelledby="about-title">
+      <h2 id="about-title">Cabin Crew Call</h2>
+      <p>Tap a <b>bulb</b> button for your reading light, a <b>vent</b> to change the air flow and the <b>blue</b> button to call the cabin crew. The call stays on until you press it again. Drag a <b>lamp</b> or <b>vent</b> to aim it. Tap the <b>moving map</b> to enlarge it, and again to shrink it.</p>
+      <h3>Credits</h3>
+      <ul>
+        <li>
+          Chime: <a href="https://freesound.org/s/245851/" target="_blank" rel="noopener">“chime.wav”</a> by Shamrock132 (Airbus A320),
+          <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0 1.0</a>, trimmed to the first chime.
+        </li>
+        <li>
+          Click: <a href="https://commons.wikimedia.org/wiki/File:Dipswitch_on_off.ogg" target="_blank" rel="noopener">“dipswitch on off”</a> by stephan (pdsounds.org), public domain, trimmed to one click.
+        </li>
+        <li>
+          Panel drawn after a
+          <a href="https://commons.wikimedia.org/wiki/File:PECO_Passenger_Service_Unit.jpg" target="_blank" rel="noopener">Boeing 737 passenger service unit photo</a>
+          by Mottsarah (CC BY-SA 4.0); no part of the photo is used.
+        </li>
+        <li>
+          Flights: real routes from the <a href="https://github.com/vradarserver/standing-data" target="_blank" rel="noopener">Virtual Radar Server standing data</a>
+          (CC0 1.0), picked from traffic seen by <a href="https://adsb.lol" target="_blank" rel="noopener">adsb.lol</a>
+          (<a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener">ODbL 1.0</a>) on <span id="snapshot-date"></span>.
+          The aircraft position is simulated along the route.
+        </li>
+        <li>
+          Weather: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>
+          (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>).
+        </li>
+        <li>Map: <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a> (public domain) via world-atlas.</li>
+      </ul>
+      <p class="version">Version <span id="app-version"></span></p>
+      <form method="dialog"><button type="submit">Close</button></form>
+    </dialog>
+
+    <dialog id="prefs" aria-labelledby="prefs-title">
+      <form method="dialog" class="prefs-form">
+        <h2 id="prefs-title">Preferences</h2>
+        <fieldset class="field seat-field">
+          <legend>Your seat</legend>
+          <label>Row <input type="number" name="row" min="1" max="99" step="1" inputmode="numeric" required /></label>
+          <label
+            >Seats
+            <select name="seats">
+              <option value="ABC">A B C</option>
+              <option value="DEF">D E F</option>
+              <option value="HJK">H J K</option>
+            </select>
+          </label>
+        </fieldset>
+        <label class="field">
+          <span>Flights shown on the moving map</span>
+          <select name="region"></select>
+        </label>
+        <fieldset class="field">
+          <legend>Units</legend>
+          <label><input type="radio" name="units" value="metric" /> Metric (km, m, °C)</label>
+          <label><input type="radio" name="units" value="imperial" /> Imperial (mi, ft, °F)</label>
+        </fieldset>
+        <fieldset class="field">
+          <legend>Clock</legend>
+          <label><input type="radio" name="clock" value="24h" /> 24-hour</label>
+          <label><input type="radio" name="clock" value="12h" /> 12-hour</label>
+        </fieldset>
+        <label class="check"><input type="checkbox" name="ife" /> Show the moving map display</label>
+        <p class="flight-now">Now showing: <b id="current-flight">—</b></p>
+        <div class="actions">
+          <button type="button" id="next-flight">Another flight</button>
+          <button type="submit">Done</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
